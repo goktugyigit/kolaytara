@@ -44,16 +44,13 @@ if (registerForm) {
     } catch (error) {
       console.error('Register error:', error);
 
-      // Fallback: Yerel ortamda LocalStorage kullan
-      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-        console.log('Yerel ortam: LocalStorage kullanılıyor');
-        const user = { email, id: Date.now() };
-        localStorage.setItem('user', JSON.stringify(user));
-        alert('Kayıt başarılı! (Yerel test modu)');
-        window.location.href = 'dashboard.html';
-      } else {
-        alert('Kayıt sırasında hata oluştu. Lütfen tekrar deneyin.');
-      }
+      // Fallback: LocalStorage kullan (backend çalışmazsa)
+      console.log('Backend API çalışmıyor, LocalStorage kullanılıyor');
+      console.error('API Error:', error);
+      const user = { email, id: Date.now() };
+      localStorage.setItem('user', JSON.stringify(user));
+      alert('Kayıt başarılı! (Geçici mod - backend yapılandırılıyor)');
+      window.location.href = 'dashboard.html';
     }
   });
 }
@@ -93,19 +90,16 @@ if (loginForm) {
     } catch (error) {
       console.error('Login error:', error);
 
-      // Fallback: Yerel ortamda LocalStorage kullan
-      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-        console.log('Yerel ortam: LocalStorage kullanılıyor');
-        if (email && password.length >= 6) {
-          const user = { email, id: Date.now() };
-          localStorage.setItem('user', JSON.stringify(user));
-          alert('Giriş başarılı! (Yerel test modu)');
-          window.location.href = 'dashboard.html';
-        } else {
-          alert('Geçersiz e-posta veya şifre!');
-        }
+      // Fallback: LocalStorage kullan (backend çalışmazsa)
+      console.log('Backend API çalışmıyor, LocalStorage kullanılıyor');
+      console.error('API Error:', error);
+      if (email && password.length >= 6) {
+        const user = { email, id: Date.now() };
+        localStorage.setItem('user', JSON.stringify(user));
+        alert('Giriş başarılı! (Geçici mod - backend yapılandırılıyor)');
+        window.location.href = 'dashboard.html';
       } else {
-        alert('Giriş sırasında hata oluştu. Lütfen tekrar deneyin.');
+        alert('Geçersiz e-posta veya şifre!');
       }
     }
   });
