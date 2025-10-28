@@ -155,8 +155,8 @@ body {
 
 /* Buttons */
 .btn {
-  background: #d2242a;
-  color: #ffffff;
+  background: transparent;
+  color: #d2242a;
   padding: 10px 20px;
   border-radius: 8px;
   text-decoration: none;
@@ -169,14 +169,10 @@ body {
 }
 
 .btn:hover {
-  background: #b01e24;
+  background: #d2242a;
   color: #ffffff;
-  border-color: #b01e24;
+  border-color: #d2242a;
   box-shadow: 0 4px 12px rgba(210, 36, 42, 0.4);
-}
-
-.btn:active {
-  color: #ffffff;
 }
 
 .btn-active {
