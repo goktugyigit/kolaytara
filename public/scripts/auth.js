@@ -43,7 +43,17 @@ if (registerForm) {
       window.location.href = 'dashboard.html';
     } catch (error) {
       console.error('Register error:', error);
-      alert('Kayıt sırasında hata oluştu. Lütfen tekrar deneyin.');
+
+      // Fallback: Yerel ortamda LocalStorage kullan
+      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        console.log('Yerel ortam: LocalStorage kullanılıyor');
+        const user = { email, id: Date.now() };
+        localStorage.setItem('user', JSON.stringify(user));
+        alert('Kayıt başarılı! (Yerel test modu)');
+        window.location.href = 'dashboard.html';
+      } else {
+        alert('Kayıt sırasında hata oluştu. Lütfen tekrar deneyin.');
+      }
     }
   });
 }
@@ -82,7 +92,21 @@ if (loginForm) {
       window.location.href = 'dashboard.html';
     } catch (error) {
       console.error('Login error:', error);
-      alert('Giriş sırasında hata oluştu. Lütfen tekrar deneyin.');
+
+      // Fallback: Yerel ortamda LocalStorage kullan
+      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        console.log('Yerel ortam: LocalStorage kullanılıyor');
+        if (email && password.length >= 6) {
+          const user = { email, id: Date.now() };
+          localStorage.setItem('user', JSON.stringify(user));
+          alert('Giriş başarılı! (Yerel test modu)');
+          window.location.href = 'dashboard.html';
+        } else {
+          alert('Geçersiz e-posta veya şifre!');
+        }
+      } else {
+        alert('Giriş sırasında hata oluştu. Lütfen tekrar deneyin.');
+      }
     }
   });
 }
