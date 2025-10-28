@@ -130,7 +130,7 @@ body {
   align-items: center;
 }
 
-.nav-links a {
+.nav-links a:not(.btn) {
   text-decoration: none;
   color: #d2242a;
   font-weight: 500;
@@ -173,6 +173,10 @@ body {
   color: #ffffff;
   border-color: #b01e24;
   box-shadow: 0 4px 12px rgba(210, 36, 42, 0.4);
+}
+
+.btn:active {
+  color: #ffffff;
 }
 
 .btn-active {
