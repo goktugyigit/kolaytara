@@ -179,28 +179,39 @@ body {
 .btn.primary {
   background: #d2242a;
   border-color: #d2242a;
+  color: #ffffff;
   font-size: 16px;
   padding: 12px 24px;
+}
+
+.btn.primary:hover {
+  background: #b01e24;
+  border-color: #b01e24;
+  color: #ffffff;
 }
 
 .btn.secondary {
   background: #000000;
   border-color: #000000;
+  color: #ffffff;
 }
 
 .btn.secondary:hover {
   background: #1a1a1a;
   border-color: #1a1a1a;
+  color: #ffffff;
 }
 
 .btn.success {
   background: #d2242a;
   border-color: #d2242a;
+  color: #ffffff;
 }
 
 .btn.success:hover {
   background: #b01e24;
   border-color: #b01e24;
+  color: #ffffff;
 }
 
 /* Hero Section */
