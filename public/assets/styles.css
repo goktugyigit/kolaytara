@@ -176,6 +176,18 @@ body {
   box-shadow: 0 4px 12px rgba(210, 36, 42, 0.4);
 }
 
+.btn-active {
+  background: #d2242a;
+  color: #ffffff;
+  border-color: #d2242a;
+}
+
+.btn-active:hover {
+  background: #b01e24;
+  border-color: #b01e24;
+  color: #ffffff;
+}
+
 .btn.primary {
   background: #d2242a;
   border-color: #d2242a;
