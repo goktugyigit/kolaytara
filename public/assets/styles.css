@@ -311,7 +311,7 @@ body {
   align-items: flex-start;
   min-height: calc(100vh - 80px);
   padding: 20px;
-  margin-top: 120px;
+  padding-top: 60px;
 }
 
 .auth-card {
