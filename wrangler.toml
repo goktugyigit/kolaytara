@@ -7,7 +7,6 @@ binding = "DB"
 database_name = "kolaytara-users"
 database_id = "d0e5a753-7e3b-42c5-93df-78aad83502cf"
 
-# R2 Storage (Enable R2 in Cloudflare Dashboard first)
-# [[r2_buckets]]
-# binding = "UPLOADS"
-# bucket_name = "kolaytara-uploads"
+[[r2_buckets]]
+binding = "UPLOADS"
+bucket_name = "kolaytara-uploads"
