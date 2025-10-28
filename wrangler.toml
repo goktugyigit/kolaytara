@@ -2,13 +2,12 @@ name = "kolaytara"
 compatibility_date = "2025-10-28"
 pages_build_output_dir = "./public"
 
-# D1 Database (Uncomment after creating database)
-# [[d1_databases]]
-# binding = "DB"
-# database_name = "kolaytara-users"
-# database_id = "your-database-id-here"
+[[d1_databases]]
+binding = "DB"
+database_name = "kolaytara-users"
+database_id = "d0e5a753-7e3b-42c5-93df-78aad83502cf"
 
-# R2 Storage (Uncomment after creating bucket)
+# R2 Storage (Enable R2 in Cloudflare Dashboard first)
 # [[r2_buckets]]
 # binding = "UPLOADS"
 # bucket_name = "kolaytara-uploads"
