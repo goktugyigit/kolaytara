@@ -169,10 +169,9 @@ body {
 }
 
 .btn:hover {
-  background: #d2242a;
-  color: #ffffff;
+  background: rgba(210, 36, 42, 0.1);
+  color: #d2242a;
   border-color: #d2242a;
-  box-shadow: 0 4px 12px rgba(210, 36, 42, 0.4);
 }
 
 .btn-active {
