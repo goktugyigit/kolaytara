@@ -54,6 +54,7 @@ body {
   left: 0;
   right: 0;
   z-index: 1000;
+  gap: 40px;
 }
 
 .navbar::after {
@@ -96,6 +97,29 @@ body {
 
 .logo:hover {
   transform: scale(1.05);
+}
+
+.nav-menu {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-menu-link {
+  text-decoration: none;
+  color: #d2242a;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s;
+  padding: 8px 0;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-menu-link:hover {
+  color: #b01e24;
+  border-bottom-color: #d2242a;
 }
 
 .nav-links {
@@ -480,11 +504,16 @@ input[type=text]:focus {
 
   .navbar {
     padding: 10px 20px;
+    gap: 15px;
   }
 
   .logo {
     height: 38px;
     max-width: 200px;
+  }
+
+  .nav-menu {
+    display: none;
   }
 
   .nav-links {
@@ -528,11 +557,16 @@ input[type=text]:focus {
 
   .navbar {
     padding: 8px 12px;
+    gap: 10px;
   }
 
   .logo {
     height: 28px;
     max-width: 140px;
+  }
+
+  .nav-menu {
+    display: none;
   }
 
   .nav-links {
