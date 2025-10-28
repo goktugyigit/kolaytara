@@ -12,7 +12,11 @@ function checkAuth() {
 if (window.location.pathname.includes('dashboard')) {
   const user = checkAuth();
   if (user) {
-    document.getElementById('userEmail').textContent = user.email;
+    // Profil butonuna kullanıcı emailini göster
+    const profileBtn = document.getElementById('profileBtn');
+    if (profileBtn) {
+      profileBtn.textContent = user.email;
+    }
   }
 }
 
@@ -23,5 +27,17 @@ if (logoutBtn) {
     e.preventDefault();
     localStorage.removeItem('user');
     window.location.href = 'index.html';
+  });
+}
+
+// Profile button handler
+const profileBtn = document.getElementById('profileBtn');
+if (profileBtn) {
+  profileBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (user) {
+      alert(`Profil Bilgileri:\n\nE-posta: ${user.email}\nKayıt Tarihi: ${user.createdAt || 'Bilinmiyor'}`);
+    }
   });
 }
