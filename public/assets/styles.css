@@ -119,7 +119,8 @@ body {
   border-radius: 6px;
 }
 
-.nav-menu-link:hover {
+.nav-menu-link:hover,
+.nav-menu-link.active {
   color: #d2242a;
   background: rgba(210, 36, 42, 0.1);
 }
