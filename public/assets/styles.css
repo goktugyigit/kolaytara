@@ -132,7 +132,7 @@ body {
 
 .nav-links a {
   text-decoration: none;
-  color: #000000;
+  color: #d2242a;
   font-weight: 500;
   transition: all 0.3s;
   padding: 8px 16px;
@@ -155,8 +155,8 @@ body {
 
 /* Buttons */
 .btn {
-  background: #d2242a;
-  color: #fff;
+  background: transparent;
+  color: #d2242a;
   padding: 10px 20px;
   border-radius: 8px;
   text-decoration: none;
@@ -169,8 +169,9 @@ body {
 }
 
 .btn:hover {
-  background: #b01e24;
-  border-color: #b01e24;
+  background: #d2242a;
+  color: #ffffff;
+  border-color: #d2242a;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(210, 36, 42, 0.4);
 }
