@@ -36,7 +36,8 @@ body {
   background: var(--background);
   color: var(--primary-black);
   line-height: 1.6;
-  padding-top: 80px;
+  padding-top: 0;
+  margin-top: 0;
 }
 
 /* Navbar */
@@ -179,10 +180,12 @@ body {
 .hero {
   text-align: center;
   padding: 80px 20px;
+  padding-top: 150px;
   background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #d2242a 100%);
   color: #fff;
   position: relative;
   overflow: hidden;
+  margin-top: 0;
 }
 
 .hero::before {
@@ -458,8 +461,8 @@ input[type=text]:focus {
 
 /* Responsive */
 @media (max-width: 768px) {
-  body {
-    padding-top: 70px;
+  .hero {
+    padding-top: 120px;
   }
 
   .hero h1 {
@@ -510,8 +513,8 @@ input[type=text]:focus {
 }
 
 @media (max-width: 480px) {
-  body {
-    padding-top: 60px;
+  .hero {
+    padding-top: 100px;
   }
 
   .hero h1 {
