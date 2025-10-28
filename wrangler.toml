@@ -1,0 +1,15 @@
+name = "kolaytara"
+main = "public"
+compatibility_date = "2025-10-28"
+pages_build_output_dir = "./public"
+
+# D1 Database (Uncomment after creating database)
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "kolaytara-users"
+# database_id = "your-database-id-here"
+
+# R2 Storage (Uncomment after creating bucket)
+# [[r2_buckets]]
+# binding = "UPLOADS"
+# bucket_name = "kolaytara-uploads"

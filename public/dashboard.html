@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KolayTara Paneli</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <img src="assets/logo.png?v=2" class="logo" alt="KolayTara Logo">
+    <div class="nav-links">
+      <span id="userEmail" class="user-info"></span>
+      <a href="#" id="logout" class="btn">Çıkış</a>
+    </div>
+  </nav>
+
+  <section class="upload-section">
+    <h2>Z Raporu Yükle</h2>
+
+    <div class="upload-area">
+      <input type="file" id="uploadInput" accept="image/*" style="display:none;">
+      <button id="selectFileBtn" class="btn secondary">Dosya Seç</button>
+      <p id="fileName" class="file-name"></p>
+    </div>
+
+    <div class="api-key-section">
+      <h3>AI Studio API Anahtarınız</h3>
+      <input type="password" id="apiKey" placeholder="Gemini API Key girin">
+      <p class="note">⚠️ Anahtar tarayıcıda saklanmaz, sadece geçici olarak kullanılır.</p>
+      <p class="note">API anahtarı almak için: <a href="https://aistudio.google.com/app/apikey" target="_blank">AI
+          Studio</a></p>
+    </div>
+
+    <button id="processBtn" class="btn primary">Yükle ve İşle</button>
+
+    <div id="loading" class="loading" style="display:none;">
+      <div class="spinner"></div>
+      <p>AI ile işleniyor...</p>
+    </div>
+
+    <div id="results" class="results"></div>
+    <button id="downloadExcel" class="btn success" style="display:none;">📊 Excel Olarak İndir</button>
+  </section>
+
+  <script src="scripts/app.js"></script>
+  <script src="scripts/upload.js"></script>
+  <script src="scripts/ai.js"></script>
+  <script src="scripts/excel.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "kolaytara",
+  "version": "1.0.0",
+  "description": "AI ile Z Raporu Muhasebeleştirme",
+  "scripts": {
+    "dev": "wrangler pages dev public --port 8788",
+    "start": "wrangler pages dev public --port 8788",
+    "deploy": "wrangler pages deploy public",
+    "preview": "wrangler pages dev public --port 3000"
+  },
+  "dependencies": {
+    "wrangler": "^3.0.0"
+  }
+}
