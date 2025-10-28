@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil - KolayTara</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles.css">
+    <style>
+        html {
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo-link">
+            <img src="assets/logo.png?v=2" class="logo" alt="KolayTara Logo">
+        </a>
+        <div class="nav-menu">
+            <a href="dashboard.html" class="nav-menu-link">Dashboard</a>
+            <a href="hakkimizda.html" class="nav-menu-link">Hakkımızda</a>
+            <a href="fiyatlandirma.html" class="nav-menu-link">Fiyatlandırma</a>
+            <a href="iletisim.html" class="nav-menu-link">Bize Ulaşın</a>
+        </div>
+        <div class="nav-links">
+            <a href="#" id="logout" class="btn">Çıkış</a>
+            <a href="profile.html" class="btn btn-active"><i class="fa-solid fa-user"></i> Profil</a>
+        </div>
+    </nav>
+
+    <section class="page-content">
+        <div class="container">
+            <h1><i class="fa-solid fa-user-circle"></i> Profil Ayarları</h1>
+            <p class="subtitle">Hesap bilgilerinizi yönetin</p>
+
+            <div class="profile-grid">
+                <div class="profile-card">
+                    <h2><i class="fa-solid fa-info-circle"></i> Hesap Bilgileri</h2>
+                    <div class="info-item">
+                        <label>E-posta:</label>
+                        <p id="userEmail">Yükleniyor...</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Üyelik Tarihi:</label>
+                        <p id="memberSince">Yükleniyor...</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Plan:</label>
+                        <p id="userPlan">Ücretsiz</p>
+                    </div>
+                </div>
+
+                <div class="profile-card">
+                    <h2><i class="fa-solid fa-key"></i> Şifre Değiştir</h2>
+                    <form id="changePasswordForm">
+                        <div class="form-group">
+                            <label for="currentPassword">Mevcut Şifre</label>
+                            <input type="password" id="currentPassword" placeholder="Mevcut şifrenizi girin" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="newPassword">Yeni Şifre</label>
+                            <input type="password" id="newPassword" placeholder="Yeni şifre (min. 6 karakter)" required
+                                minlength="6">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmNewPassword">Yeni Şifre Tekrar</label>
+                            <input type="password" id="confirmNewPassword" placeholder="Yeni şifreyi tekrar girin"
+                                required>
+                        </div>
+                        <button type="submit" class="btn primary">
+                            <i class="fa-solid fa-check"></i> Şifreyi Güncelle
+                        </button>
+                    </form>
+                    <div id="passwordMessage" class="message" style="display:none;"></div>
+                </div>
+            </div>
+
+            <div class="profile-card danger-zone">
+                <h2><i class="fa-solid fa-exclamation-triangle"></i> Tehlikeli Bölge</h2>
+                <p>Hesabınızı kalıcı olarak silmek isterseniz aşağıdaki butona tıklayın.</p>
+                <button id="deleteAccountBtn" class="btn btn-danger">
+                    <i class="fa-solid fa-trash"></i> Hesabı Sil
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/profile.js"></script>
+</body>
+
+</html>
