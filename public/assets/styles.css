@@ -633,3 +633,324 @@ input[type=text]:focus {
     font-size: 12px;
   }
 }
+
+/* Page Content */
+.page-content {
+  margin-top: 100px;
+  margin-bottom: 60px;
+  min-height: calc(100vh - 160px);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.page-content h1 {
+  font-size: 42px;
+  color: #000000;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 18px;
+  color: #666666;
+  margin-bottom: 50px;
+}
+
+/* About Page */
+.about-section {
+  margin-bottom: 50px;
+}
+
+.about-section h2 {
+  font-size: 28px;
+  color: #d2242a;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333333;
+  margin-bottom: 15px;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.step-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  border-top: 4px solid #d2242a;
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  background: #d2242a;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 auto 20px;
+}
+
+.step-card h3 {
+  font-size: 20px;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.step-card p {
+  font-size: 14px;
+  color: #666666;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+}
+
+.feature-list li {
+  font-size: 16px;
+  padding: 10px 0;
+  color: #333333;
+}
+
+/* Pricing Page */
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin: 50px 0;
+}
+
+.pricing-card {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  border: 2px solid #e5e7eb;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.pricing-card.featured {
+  border-color: #d2242a;
+  box-shadow: 0 4px 16px rgba(210, 36, 42, 0.2);
+}
+
+.badge {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #d2242a;
+  color: #ffffff;
+  padding: 5px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.pricing-card h3 {
+  font-size: 24px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.price {
+  margin-bottom: 30px;
+}
+
+.price .amount {
+  font-size: 48px;
+  font-weight: 700;
+  color: #d2242a;
+}
+
+.price .period {
+  font-size: 18px;
+  color: #666666;
+}
+
+.pricing-card .features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.pricing-card .features li {
+  padding: 10px 0;
+  font-size: 15px;
+  color: #333333;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #d2242a;
+  border: 2px solid #d2242a;
+}
+
+.btn-outline:hover {
+  background: rgba(210, 36, 42, 0.1);
+}
+
+.faq-section {
+  margin-top: 80px;
+}
+
+.faq-section h2 {
+  font-size: 32px;
+  color: #000000;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.faq-item {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  border-left: 4px solid #d2242a;
+}
+
+.faq-item h3 {
+  font-size: 18px;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.faq-item p {
+  font-size: 15px;
+  color: #666666;
+  line-height: 1.6;
+}
+
+/* Contact Page */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  margin-top: 50px;
+}
+
+.contact-form-section h2,
+.contact-info-section h2 {
+  font-size: 24px;
+  color: #000000;
+  margin-bottom: 25px;
+}
+
+.contact-form {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #d2242a;
+  box-shadow: 0 0 0 3px rgba(210, 36, 42, 0.1);
+}
+
+.contact-info-card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+  border-left: 4px solid #d2242a;
+}
+
+.contact-info-card h3 {
+  font-size: 18px;
+  color: #000000;
+  margin-bottom: 15px;
+}
+
+.contact-info-card p {
+  font-size: 15px;
+  color: #666666;
+  line-height: 1.6;
+  margin-bottom: 5px;
+}
+
+.social-link {
+  color: #d2242a;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.social-link:hover {
+  color: #b01e24;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-content h1 {
+    font-size: 32px;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}

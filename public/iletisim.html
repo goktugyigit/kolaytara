@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bize Ulaşın - KolayTara</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo-link">
+            <img src="assets/logo.png?v=2" class="logo" alt="KolayTara Logo">
+        </a>
+        <div class="nav-menu">
+            <a href="index.html" class="nav-menu-link">Ana Sayfa</a>
+            <a href="hakkimizda.html" class="nav-menu-link">Hakkımızda</a>
+            <a href="fiyatlandirma.html" class="nav-menu-link">Fiyatlandırma</a>
+            <a href="iletisim.html" class="nav-menu-link">Bize Ulaşın</a>
+        </div>
+        <div class="nav-links">
+            <a href="login.html" class="btn">Giriş Yap</a>
+            <a href="register.html" class="btn">Kayıt Ol</a>
+        </div>
+    </nav>
+
+    <section class="page-content">
+        <div class="container">
+            <h1>Bize Ulaşın</h1>
+            <p class="subtitle">Sorularınız için bizimle iletişime geçin</p>
+
+            <div class="contact-grid">
+                <div class="contact-form-section">
+                    <h2>İletişim Formu</h2>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Ad Soyad</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-posta</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Konu</label>
+                            <select id="subject" required>
+                                <option value="">Seçiniz</option>
+                                <option value="destek">Teknik Destek</option>
+                                <option value="satis">Satış</option>
+                                <option value="genel">Genel Bilgi</option>
+                                <option value="oneri">Öneri</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mesajınız</label>
+                            <textarea id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn primary">Gönder</button>
+                    </form>
+                </div>
+
+                <div class="contact-info-section">
+                    <h2>İletişim Bilgileri</h2>
+
+                    <div class="contact-info-card">
+                        <h3>📧 E-posta</h3>
+                        <p>destek@kolaytara.com</p>
+                        <p>satis@kolaytara.com</p>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <h3>📞 Telefon</h3>
+                        <p>+90 (212) 123 45 67</p>
+                        <p>Pazartesi - Cuma: 09:00 - 18:00</p>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <h3>📍 Adres</h3>
+                        <p>Maslak Mahallesi<br>
+                            Büyükdere Caddesi No: 123<br>
+                            Sarıyer / İstanbul</p>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <h3>🌐 Sosyal Medya</h3>
+                        <p>
+                            <a href="#" class="social-link">Twitter</a> |
+                            <a href="#" class="social-link">LinkedIn</a> |
+                            <a href="#" class="social-link">Instagram</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="scripts/app.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Mesajınız alındı! En kısa sürede size dönüş yapacağız.');
+            e.target.reset();
+        });
+    </script>
+</body>
+
+</html>
