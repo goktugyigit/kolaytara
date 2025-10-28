@@ -85,7 +85,7 @@ body {
 }
 
 .logo {
-  height: 50px;
+  height: 40px;
   width: auto;
   max-width: 100%;
   object-fit: contain;
@@ -94,7 +94,7 @@ body {
 }
 
 .logo:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .nav-links {
