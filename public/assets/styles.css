@@ -110,7 +110,7 @@ body {
 .nav-menu-link {
   text-decoration: none;
   color: #d2242a;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 15px;
   transition: all 0.3s;
   padding: 8px 0;
@@ -118,8 +118,8 @@ body {
 }
 
 .nav-menu-link:hover {
-  color: #b01e24;
-  border-bottom-color: #d2242a;
+  color: #000000;
+  border-bottom-color: #000000;
 }
 
 .nav-links {
