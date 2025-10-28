@@ -968,3 +968,38 @@ input[type=text]:focus {
     gap: 30px;
   }
 }
+
+/* 
+Font Awesome Icon Styles */
+.feature-card h3 i,
+.contact-info-card h3 i {
+  margin-right: 10px;
+  color: #d2242a;
+}
+
+.feature-list li i,
+.pricing-card .features li i {
+  margin-right: 10px;
+  width: 20px;
+  display: inline-block;
+}
+
+.pricing-card .features li i.fa-check {
+  color: #10b981;
+}
+
+.pricing-card .features li i.fa-times {
+  color: #ef4444;
+}
+
+.feature-list li i.fa-check-circle {
+  color: #10b981;
+}
+
+.social-link i {
+  margin-right: 5px;
+}
+
+html {
+  overflow-y: scroll;
+}
