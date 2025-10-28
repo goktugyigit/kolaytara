@@ -43,14 +43,7 @@ if (registerForm) {
       window.location.href = 'dashboard.html';
     } catch (error) {
       console.error('Register error:', error);
-
-      // Fallback: LocalStorage kullan (backend çalışmazsa)
-      console.log('Backend API çalışmıyor, LocalStorage kullanılıyor');
-      console.error('API Error:', error);
-      const user = { email, id: Date.now() };
-      localStorage.setItem('user', JSON.stringify(user));
-      alert('Kayıt başarılı! (Geçici mod - backend yapılandırılıyor)');
-      window.location.href = 'dashboard.html';
+      alert('Kayıt sırasında hata oluştu. Lütfen tekrar deneyin.\n\nHata: ' + error.message);
     }
   });
 }
@@ -89,18 +82,7 @@ if (loginForm) {
       window.location.href = 'dashboard.html';
     } catch (error) {
       console.error('Login error:', error);
-
-      // Fallback: LocalStorage kullan (backend çalışmazsa)
-      console.log('Backend API çalışmıyor, LocalStorage kullanılıyor');
-      console.error('API Error:', error);
-      if (email && password.length >= 6) {
-        const user = { email, id: Date.now() };
-        localStorage.setItem('user', JSON.stringify(user));
-        alert('Giriş başarılı! (Geçici mod - backend yapılandırılıyor)');
-        window.location.href = 'dashboard.html';
-      } else {
-        alert('Geçersiz e-posta veya şifre!');
-      }
+      alert('Giriş sırasında hata oluştu. Lütfen tekrar deneyin.\n\nHata: ' + error.message);
     }
   });
 }
