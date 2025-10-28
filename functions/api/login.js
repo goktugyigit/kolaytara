@@ -1,9 +1,5 @@
 // Cloudflare Pages Function - Login
-interface Env {
-    DB: any; // D1Database
-}
-
-export async function onRequestPost(context: { request: Request; env: Env }) {
+export async function onRequestPost(context) {
     try {
         const { email, password } = await context.request.json();
         const db = context.env.DB;
@@ -40,11 +36,13 @@ export async function onRequestPost(context: { request: Request; env: Env }) {
 
     } catch (error) {
         console.error('Login error:', error);
-        return Response.json({ error: 'Giriş sırasında hata oluştu: ' + error.message }, { status: 500 });
+        return Response.json({
+            error: 'Giriş sırasında hata oluştu: ' + error.message
+        }, { status: 500 });
     }
 }
 
-async function hashPassword(password: string): Promise<string> {
+async function hashPassword(password) {
     const encoder = new TextEncoder();
     const data = encoder.encode(password);
     const hash = await crypto.subtle.digest('SHA-256', data);
