@@ -1,6 +1,6 @@
 // Cloudflare Pages Function - Register
 interface Env {
-    DB: D1Database;
+    DB: any; // D1Database
 }
 
 export async function onRequestPost(context: { request: Request; env: Env }) {
