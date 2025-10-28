@@ -12,10 +12,10 @@ function checkAuth() {
 if (window.location.pathname.includes('dashboard')) {
   const user = checkAuth();
   if (user) {
-    // Profil butonuna kullanıcı emailini göster
+    // Profil butonuna ikon göster
     const profileBtn = document.getElementById('profileBtn');
     if (profileBtn) {
-      profileBtn.textContent = user.email;
+      profileBtn.textContent = '👤 Profil';
     }
   }
 }
