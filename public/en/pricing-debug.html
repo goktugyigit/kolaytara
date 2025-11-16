@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Debug</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background: #f5f5f5;
+        }
+
+        .test {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        img {
+            border: 2px solid #ddd;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo-link">
+            <img src="../assets/logo.png?v=2" class="logo" alt="KolayTara Logo">
+        </a>
+        <div class="nav-menu">
+            <a href="index.html" class="nav-menu-link">Home</a>
+            <a href="about.html" class="nav-menu-link">About</a>
+            <a href="pricing.html" class="nav-menu-link active">Pricing</a>
+            <a href="contact.html" class="nav-menu-link">Contact</a>
+        </div>
+        <div class="nav-links">
+            <div class="language-selector">
+                <button class="lang-dropdown-btn" onclick="this.parentElement.classList.toggle('active')">
+                    <span class="flag-icon"><img src="../assets/flags/us.svg?v=2" alt="US"></span>
+                    <span class="lang-text">EN</span>
+                </button>
+                <div class="lang-dropdown-menu">
+                    <a href="/tr/fiyatlandirma.html" class="lang-option">
+                        <span class="flag-icon"><img src="../assets/flags/tr.svg?v=2" alt="TR"></span>
+                        <span class="lang-text">Türkçe</span>
+                    </a>
+                    <a href="/en/pricing.html" class="lang-option active">
+                        <span class="flag-icon"><img src="../assets/flags/us.svg?v=2" alt="US"></span>
+                        <span class="lang-text">English</span>
+                    </a>
+                </div>
+            </div>
+            <a href="login.html" class="btn">Login</a>
+            <a href="register.html" class="btn">Sign Up</a>
+        </div>
+    </nav>
+
+    <h1>Pricing Page Flag Debug</h1>
+
+    <div class="test">
+        <h2>Test 1: Direct Paths</h2>
+        <p>US Flag: <img src="../assets/flags/us.svg?v=3" width="32" height="32" alt="US"></p>
+        <p>TR Flag: <img src="../assets/flags/tr.svg?v=3" width="32" height="32" alt="TR"></p>
+    </div>
+
+    <div class="test">
+        <h2>Test 2: Without Version</h2>
+        <p>US Flag: <img src="../assets/flags/us.svg" width="32" height="32" alt="US"></p>
+        <p>TR Flag: <img src="../assets/flags/tr.svg" width="32" height="32" alt="TR"></p>
+    </div>
+
+    <div class="test">
+        <h2>Test 3: Absolute Path</h2>
+        <p>US Flag: <img src="/assets/flags/us.svg" width="32" height="32" alt="US"></p>
+        <p>TR Flag: <img src="/assets/flags/tr.svg" width="32" height="32" alt="TR"></p>
+    </div>
+
+    <div class="test">
+        <h2>Console Check</h2>
+        <p>Open Developer Tools (F12) and check Console for errors</p>
+    </div>
+
+    <script>
+        console.log('Current URL:', window.location.href);
+        console.log('Testing flag paths...');
+
+        // Test US flag
+        fetch('../assets/flags/us.svg?v=3')
+            .then(r => {
+                console.log('US flag response:', r.status, r.ok ? '✓' : '✗');
+                return r.text();
+            })
+            .then(text => console.log('US SVG length:', text.length))
+            .catch(err => console.error('US flag error:', err));
+
+        // Test TR flag
+        fetch('../assets/flags/tr.svg?v=3')
+            .then(r => {
+                console.log('TR flag response:', r.status, r.ok ? '✓' : '✗');
+                return r.text();
+            })
+            .then(text => console.log('TR SVG length:', text.length))
+            .catch(err => console.error('TR flag error:', err));
+    </script>
+</body>
+
+</html>

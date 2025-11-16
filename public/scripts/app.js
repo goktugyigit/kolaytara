@@ -41,3 +41,24 @@ if (profileBtn) {
     }
   });
 }
+
+// Language selector dropdown functionality
+document.addEventListener('DOMContentLoaded', function () {
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function (event) {
+    const languageSelectors = document.querySelectorAll('.language-selector');
+    languageSelectors.forEach(selector => {
+      if (!selector.contains(event.target)) {
+        selector.classList.remove('active');
+      }
+    });
+  });
+
+  // Prevent dropdown from closing when clicking inside
+  const dropdownBtns = document.querySelectorAll('.lang-dropdown-btn');
+  dropdownBtns.forEach(btn => {
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+    });
+  });
+});

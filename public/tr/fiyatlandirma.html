@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FiyatlandÄ±rma - KolayTara</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo-link">
+            <img src="../assets/logo.png?v=2" class="logo" alt="KolayTara Logo">
+        </a>
+        <div class="nav-menu">
+            <a href="index.html" class="nav-menu-link">Ana Sayfa</a>
+            <a href="hakkimizda.html" class="nav-menu-link">HakkÄ±mÄ±zda</a>
+            <a href="fiyatlandirma.html" class="nav-menu-link active">FiyatlandÄ±rma</a>
+            <a href="iletisim.html" class="nav-menu-link">Bize UlaÅŸÄ±n</a>
+        </div>
+        <div class="nav-links">
+            <div class="language-selector">
+                <button class="lang-dropdown-btn" onclick="this.parentElement.classList.toggle('active')">
+                    <span class="flag-icon"><img src="../assets/flags/tr.svg" alt="TR"></span>
+                    <span class="lang-text">TR</span>
+                </button>
+                <div class="lang-dropdown-menu">
+                    <a href="/tr/fiyatlandirma.html" class="lang-option active">
+                        <span class="flag-icon"><img src="../assets/flags/tr.svg" alt="TR"></span>
+                        <span class="lang-text">TÃ¼rkÃ§e</span>
+                    </a>
+                    <a href="/en/pricing.html" class="lang-option">
+                        <span class="flag-icon"><img src="../assets/flags/us.svg" alt="US"></span>
+                        <span class="lang-text">English</span>
+                    </a>
+                </div>
+            </div>
+            <a href="login.html" class="btn">GiriÅŸ Yap</a>
+            <a href="register.html" class="btn">KayÄ±t Ol</a>
+        </div>
+    </nav>
+
+    <section class="page-content">
+        <div class="container">
+            <h1>FiyatlandÄ±rma</h1>
+            <p class="subtitle">Size En Uygun PlanÄ± SeÃ§in</p>
+
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>AylÄ±k Plan</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount">30</span>
+                            <span class="period">/ay</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> SÄ±nÄ±rsÄ±z Excel Tarama</li>
+                        <li><i class="fas fa-check"></i> Yapay Zeka Destekli Analiz</li>
+                        <li><i class="fas fa-check"></i> Otomatik Veri Ä°ÅŸleme</li>
+                        <li><i class="fas fa-check"></i> E-posta DesteÄŸi</li>
+                        <li><i class="fas fa-check"></i> GÃ¼venli Veri Saklama</li>
+                    </ul>
+                    <a href="register.html" class="pricing-btn">Hemen BaÅŸla</a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="badge">En PopÃ¼ler</div>
+                    <div class="pricing-header">
+                        <h3>3 AylÄ±k Plan</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount">75</span>
+                            <span class="period">/3 ay</span>
+                        </div>
+                        <div class="discount-info">
+                            <span class="original-price">$90</span>
+                            <span class="discount-badge">%17 Ä°ndirim</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> SÄ±nÄ±rsÄ±z Excel Tarama</li>
+                        <li><i class="fas fa-check"></i> Yapay Zeka Destekli Analiz</li>
+                        <li><i class="fas fa-check"></i> Otomatik Veri Ä°ÅŸleme</li>
+                        <li><i class="fas fa-check"></i> Ã–ncelikli E-posta DesteÄŸi</li>
+                        <li><i class="fas fa-check"></i> GÃ¼venli Veri Saklama</li>
+                        <li><i class="fas fa-check"></i> GeliÅŸmiÅŸ Raporlama</li>
+                    </ul>
+                    <a href="register.html" class="pricing-btn">Hemen BaÅŸla</a>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="badge best-value">En AvantajlÄ±</div>
+                    <div class="pricing-header">
+                        <h3>YÄ±llÄ±k Plan</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount">240</span>
+                            <span class="period">/yÄ±l</span>
+                        </div>
+                        <div class="discount-info">
+                            <span class="original-price">$360</span>
+                            <span class="discount-badge">%33 Ä°ndirim</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> SÄ±nÄ±rsÄ±z Excel Tarama</li>
+                        <li><i class="fas fa-check"></i> Yapay Zeka Destekli Analiz</li>
+                        <li><i class="fas fa-check"></i> Otomatik Veri Ä°ÅŸleme</li>
+                        <li><i class="fas fa-check"></i> 7/24 Ã–ncelikli Destek</li>
+                        <li><i class="fas fa-check"></i> GÃ¼venli Veri Saklama</li>
+                        <li><i class="fas fa-check"></i> GeliÅŸmiÅŸ Raporlama</li>
+                        <li><i class="fas fa-check"></i> API EriÅŸimi</li>
+                        <li><i class="fas fa-check"></i> Ã–zel Entegrasyonlar</li>
+                    </ul>
+                    <a href="register.html" class="pricing-btn">Hemen BaÅŸla</a>
+                </div>
+            </div>
+
+            <div style="text-align: center; max-width: 800px; margin: 50px auto 40px;">
+                <i class="fas fa-rocket"
+                    style="font-size: 50px; color: #d2242a; margin-bottom: 20px; display: block;"></i>
+                <h2 style="font-size: 24px; color: #000000; margin-bottom: 15px;">Beta KullanÄ±cÄ±larÄ±na Ã–zel FÄ±rsat</h2>
+                <p style="font-size: 16px; color: #666666; line-height: 1.7;">
+                    Beta dÃ¶neminde kayÄ±t olan kullanÄ±cÄ±larÄ±mÄ±z, resmi lansmanÄ±n ardÄ±ndan ek %20 indirim kazanacaktÄ±r!
+                </p>
+            </div>
+
+
+
+            <div style="text-align: center; margin-top: 60px; padding: 40px; background: #f9fafb; border-radius: 12px;">
+                <h2 style="font-size: 26px; color: #000000; margin-bottom: 15px;">
+                    <i class="fas fa-envelope" style="color: #d2242a; margin-right: 8px;"></i>
+                    DetaylÄ± FiyatlandÄ±rma Ä°Ã§in Bizimle Ä°letiÅŸime GeÃ§in
+                </h2>
+                <p style="font-size: 15px; color: #666666; margin-bottom: 20px;">
+                    Ä°ÅŸletmenizin ihtiyaÃ§larÄ±na Ã¶zel fiyatlandÄ±rma ve paket seÃ§enekleri iÃ§in destek ekibimizle gÃ¶rÃ¼ÅŸÃ¼n.
+                </p>
+                <p style="font-size: 17px; margin-bottom: 10px;">
+                    <strong>E-posta:</strong> <a href="mailto:kolaytara@hotmail.com"
+                        class="social-link">kolaytara@hotmail.com</a>
+                </p>
+                <p style="font-size: 13px; color: #999999;">
+                    Genellikle 1-2 iÅŸ gÃ¼nÃ¼ iÃ§inde size geri dÃ¶nÃ¼ÅŸ yapÄ±yoruz.
+                </p>
+            </div>
+
+            <div class="faq-section">
+                <h2>SÄ±k Sorulan Sorular</h2>
+                <div class="faq-item">
+                    <h3>Beta dÃ¶nemi ne kadar sÃ¼recek?</h3>
+                    <p>Beta dÃ¶nemi, platformumuzu geliÅŸtirirken kullanÄ±cÄ± geri bildirimlerini topladÄ±ÄŸÄ±mÄ±z bir sÃ¼reÃ§tir.
+                        SÃ¼re hakkÄ±nda gÃ¼ncellemeler e-posta ile paylaÅŸÄ±lacaktÄ±r.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Beta kullanÄ±cÄ±larÄ±na Ã¶zel avantajlar var mÄ±?</h3>
+                    <p>Evet! Beta kullanÄ±cÄ±larÄ±mÄ±z, resmi lansmanÄ±n ardÄ±ndan Ã¶zel indirimler ve erken eriÅŸim
+                        avantajlarÄ±ndan yararlanacaktÄ±r.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Ã–deme yÃ¶ntemleri nelerdir?</h3>
+                    <p>Kredi kartÄ±, banka kartÄ± ve havale ile Ã¶deme kabul edilmektedir. Kurumsal mÃ¼ÅŸteriler iÃ§in fatura
+                        seÃ§eneÄŸi mevcuttur.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Ä°ptal ve iade politikanÄ±z nedir?</h3>
+                    <p>DetaylÄ± bilgi iÃ§in <a href="refund-policy.html" class="social-link">Ä°ade ve Ä°ptal PolitikasÄ±</a>
+                        sayfamÄ±zÄ± ziyaret edebilirsiniz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../scripts/app.js"></script>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <p class="company-name">BEE PIXEL LLC</p>
+                <p class="company-tagline">Yapay zeka destekli iÅŸ Ã§Ã¶zÃ¼mleri ile geleceÄŸi ÅŸekillendiriyoruz</p>
+                <p class="company-description">KolayTara, muhasebe sÃ¼reÃ§lerinizi dijitalleÅŸtiren, zamandan tasarruf
+                    ettiren ve hata oranÄ±nÄ± minimize eden yapay zeka destekli platformumuzdur.</p>
+                <div class="footer-contact">
+                    <p class="contact-label">Ä°letiÅŸim</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:kolaytara@hotmail.com"
+                            class="social-link">kolaytara@hotmail.com</a></p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <h3>HÄ±zlÄ± BaÄŸlantÄ±lar</h3>
+                <div class="footer-links">
+                    <a href="index.html">Ana Sayfa</a>
+                    <a href="hakkimizda.html">HakkÄ±mÄ±zda</a>
+                    <a href="fiyatlandirma.html">FiyatlandÄ±rma</a>
+                    <a href="iletisim.html">Ä°letiÅŸim</a>
+                    <a href="terms.html">KullanÄ±m ÅartlarÄ±</a>
+                    <a href="privacy.html">Gizlilik PolitikasÄ±</a>
+                    <a href="refund-policy.html">Ä°ade ve Ä°ptal PolitikasÄ±</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 BEE PIXEL LLC. TÃ¼m haklarÄ± saklÄ±dÄ±r.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

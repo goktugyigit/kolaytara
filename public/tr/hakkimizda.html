@@ -1,18 +1,17 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="tr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hakkımızda - KolayTara</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">    <link rel="stylesheet" href="../assets/styles.css">
 </head>
 
 <body>
     <nav class="navbar">
         <a href="index.html" class="logo-link">
-            <img src="assets/logo.png?v=2" class="logo" alt="KolayTara Logo">
+            <img src="../assets/logo.png?v=2" class="logo" alt="KolayTara Logo">
         </a>
         <div class="nav-menu">
             <a href="index.html" class="nav-menu-link">Ana Sayfa</a>
@@ -21,6 +20,22 @@
             <a href="iletisim.html" class="nav-menu-link">Bize Ulaşın</a>
         </div>
         <div class="nav-links">
+            <div class="language-selector">
+                <button class="lang-dropdown-btn" onclick="this.parentElement.classList.toggle('active')">
+                    <span class="flag-icon"><img src="../assets/flags/tr.svg?v=2" alt="TR"></span>
+                    <span class="lang-text">TR</span>
+                </button>
+                <div class="lang-dropdown-menu">
+                    <a href="/tr/hakkimizda.html" class="lang-option active">
+                        <span class="flag-icon"><img src="../assets/flags/tr.svg?v=2" alt="TR"></span>
+                        <span class="lang-text">Türkçe</span>
+                    </a>
+                    <a href="/en/about.html" class="lang-option">
+                        <span class="flag-icon"><img src="../assets/flags/us.svg?v=2" alt="US"></span>
+                        <span class="lang-text">English</span>
+                    </a>
+                </div>
+            </div>
             <a href="login.html" class="btn">Giriş Yap</a>
             <a href="register.html" class="btn">Kayıt Ol</a>
         </div>
@@ -77,7 +92,38 @@
         </div>
     </section>
 
-    <script src="scripts/app.js"></script>
+    <script src="../scripts/app.js"></script>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <p class="company-name">BEE PIXEL LLC</p>
+                <p class="company-tagline">Yapay zeka destekli iş çözümleri ile geleceği şekillendiriyoruz</p>
+                <p class="company-description">KolayTara, muhasebe süreçlerinizi dijitalleştiren, zamandan tasarruf
+                    ettiren ve hata oranını minimize eden yapay zeka destekli platformumuzdur.</p>
+                <div class="footer-contact">
+                    <p class="contact-label">İletişim</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:kolaytara@hotmail.com"
+                            class="social-link">kolaytara@hotmail.com</a></p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <h3>Hızlı Bağlantılar</h3>
+                <div class="footer-links">
+                    <a href="index.html">Ana Sayfa</a>
+                    <a href="hakkimizda.html">Hakkımızda</a>
+                    <a href="fiyatlandirma.html">Fiyatlandırma</a>
+                    <a href="iletisim.html">İletişim</a>
+                    <a href="terms.html">Kullanım Şartları</a>
+                    <a href="privacy.html">Gizlilik Politikası</a>
+                    <a href="refund-policy.html">İade ve İptal Politikası</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 BEE PIXEL LLC. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
 </body>
 
 </html>

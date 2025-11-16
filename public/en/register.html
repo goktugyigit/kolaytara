@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - KolayTara</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+  <style>
+    html {
+      overflow-y: scroll;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="logo-link">
+      <img src="../assets/logo.png?v=2" class="logo" alt="KolayTara Logo">
+    </a>
+    <div class="nav-menu">
+      <a href="index.html" class="nav-menu-link">Home</a>
+      <a href="about.html" class="nav-menu-link">About</a>
+      <a href="pricing.html" class="nav-menu-link">Pricing</a>
+      <a href="contact.html" class="nav-menu-link">Contact</a>
+    </div>
+    <div class="nav-links">
+      <div class="language-selector">
+        <button class="lang-dropdown-btn" onclick="this.parentElement.classList.toggle('active')">
+          <span class="flag-icon"><img src="../assets/flags/us.svg?v=2" alt="US"></span>
+          <span class="lang-text">EN</span>
+        </button>
+        <div class="lang-dropdown-menu">
+          <a href="/tr/register.html" class="lang-option">
+            <span class="flag-icon"><img src="../assets/flags/tr.svg?v=2" alt="TR"></span>
+            <span class="lang-text">Türkçe</span>
+          </a>
+          <a href="/en/register.html" class="lang-option active">
+            <span class="flag-icon"><img src="../assets/flags/us.svg?v=2" alt="US"></span>
+            <span class="lang-text">English</span>
+          </a>
+        </div>
+      </div>
+      <a href="login.html" class="btn">Login</a>
+      <a href="register.html" class="btn btn-active">Sign Up</a>
+    </div>
+  </nav>
+
+  <section class="auth-section">
+    <div class="auth-card">
+      <h2>Sign Up</h2>
+      <form id="registerForm">
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="submit" class="btn primary">Sign Up</button>
+      </form>
+      <p class="auth-link">Already have an account? <a href="login.html">Login</a></p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <p class="company-name">BEE PIXEL LLC</p>
+        <p class="company-tagline">Shaping the future with AI-powered business solutions</p>
+        <p class="company-description">KolayTara is our AI-powered platform that digitalizes your accounting processes,
+          saves time, and minimizes error rates.</p>
+        <div class="footer-contact">
+          <p class="contact-label">Contact</p>
+          <p><i class="fas fa-envelope"></i> <a href="mailto:kolaytara@hotmail.com"
+              class="social-link">kolaytara@hotmail.com</a></p>
+        </div>
+      </div>
+      <div class="footer-right">
+        <h3>Quick Links</h3>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="contact.html">Contact</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="refund-policy.html">Refund Policy</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 BEE PIXEL LLC. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../scripts/auth.js"></script>
+</body>
+
+</html>

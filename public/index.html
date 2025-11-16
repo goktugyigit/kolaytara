@@ -1,51 +1,86 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="tr">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KolayTara – AI ile Z Raporu Muhasebeleştirme</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="assets/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KolayTara - Yönlendiriliyor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #000000 0%, #d2242a 100%);
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .logo-text {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #ffffff;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        .loading-text {
+            font-size: 18px;
+            margin-top: 20px;
+            opacity: 0.9;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <nav class="navbar">
-    <a href="index.html" class="logo-link">
-      <img src="assets/logo.png?v=2" class="logo" alt="KolayTara Logo">
-    </a>
-    <div class="nav-menu">
-      <a href="index.html" class="nav-menu-link active">Ana Sayfa</a>
-      <a href="hakkimizda.html" class="nav-menu-link">Hakkımızda</a>
-      <a href="fiyatlandirma.html" class="nav-menu-link">Fiyatlandırma</a>
-      <a href="iletisim.html" class="nav-menu-link">Bize Ulaşın</a>
+    <div class="container">
+        <div class="logo-text">KolayTara</div>
+        <div class="spinner"></div>
+        <p class="loading-text">Yükleniyor...</p>
     </div>
-    <div class="nav-links">
-      <a href="login.html" class="btn">Giriş Yap</a>
-      <a href="register.html" class="btn">Kayıt Ol</a>
-    </div>
-  </nav>
-
-  <section class="hero">
-    <h1>Yapay Zekâ ile Fiş ve Z Raporu Muhasebesi</h1>
-    <p>KolayTara ile fotoğrafını çek, verilerini anında Excel olarak indir.</p>
-    <a href="register.html" class="btn primary">Hemen Başla</a>
-  </section>
-
-  <section class="features">
-    <div class="feature-card">
-      <h3><i class="fas fa-camera"></i> Fotoğraf Çek</h3>
-      <p>Z raporunuzun fotoğrafını çekin veya yükleyin</p>
-    </div>
-    <div class="feature-card">
-      <h3><i class="fas fa-brain"></i> AI İşleme</h3>
-      <p>Gemini AI ile otomatik veri çıkarımı</p>
-    </div>
-    <div class="feature-card">
-      <h3><i class="fas fa-file-excel"></i> Excel İndir</h3>
-      <p>Muhasebe verilerinizi Excel formatında alın</p>
-    </div>
-  </section>
+    <script>
+        // 1.5 saniye sonra yönlendir
+        setTimeout(() => {
+            window.location.href = '/tr/index.html';
+        }, 1500);
+    </script>
 </body>
 
 </html>

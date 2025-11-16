@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Flag Test</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <style>
+        body {
+            padding: 50px;
+        }
+
+        .test-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .test-row {
+            margin: 15px 0;
+            padding: 10px;
+            background: #f9fafb;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Pricing Page Flag Test</h1>
+
+    <div class="test-section">
+        <h2>Test 1: Direct Image Tags</h2>
+        <div class="test-row">
+            <p>US Flag: <img src="assets/flags/us.svg" alt="US" style="width: 24px; height: 24px;"></p>
+            <p>TR Flag: <img src="assets/flags/tr.svg" alt="TR" style="width: 24px; height: 24px;"></p>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 2: With flag-icon class</h2>
+        <div class="test-row">
+            <p>US: <span class="flag-icon"><img src="assets/flags/us.svg" alt="US"></span></p>
+            <p>TR: <span class="flag-icon"><img src="assets/flags/tr.svg" alt="TR"></span></p>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 3: Full Language Selector (from pricing.html)</h2>
+        <div class="test-row">
+            <div class="language-selector">
+                <button class="lang-dropdown-btn" onclick="this.parentElement.classList.toggle('active')">
+                    <span class="flag-icon"><img src="assets/flags/us.svg" alt="US"></span>
+                    <span class="lang-text">EN</span>
+                </button>
+                <div class="lang-dropdown-menu">
+                    <a href="#" class="lang-option">
+                        <span class="flag-icon"><img src="assets/flags/tr.svg" alt="TR"></span>
+                        <span class="lang-text">Türkçe</span>
+                    </a>
+                    <a href="#" class="lang-option active">
+                        <span class="flag-icon"><img src="assets/flags/us.svg" alt="US"></span>
+                        <span class="lang-text">English</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 4: Navbar Style</h2>
+        <nav class="navbar">
+            <div class="nav-links">
+                <div class="language-selector">
+                    <button class="lang-dropdown-btn" onclick="this.parentElement.classList.toggle('active')">
+                        <span class="flag-icon"><img src="assets/flags/us.svg" alt="US"></span>
+                        <span class="lang-text">EN</span>
+                    </button>
+                    <div class="lang-dropdown-menu">
+                        <a href="#" class="lang-option">
+                            <span class="flag-icon"><img src="assets/flags/tr.svg" alt="TR"></span>
+                            <span class="lang-text">Türkçe</span>
+                        </a>
+                        <a href="#" class="lang-option active">
+                            <span class="flag-icon"><img src="assets/flags/us.svg" alt="US"></span>
+                            <span class="lang-text">English</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="test-section">
+        <h2>Console Check</h2>
+        <p>Tarayıcı konsolunu açın (F12) ve hata olup olmadığını kontrol edin.</p>
+        <button onclick="checkImages()">Bayrak Yükleme Durumunu Kontrol Et</button>
+        <div id="result" style="margin-top: 10px; padding: 10px; background: #f0f0f0;"></div>
+    </div>
+
+    <script>
+        function checkImages() {
+            const result = document.getElementById('result');
+            const images = document.querySelectorAll('img[src*="flags"]');
+            let html = '<h3>Bayrak Durumu:</h3>';
+
+            images.forEach((img, index) => {
+                html += `<p>${index + 1}. ${img.src} - `;
+                if (img.complete && img.naturalHeight !== 0) {
+                    html += '<span style="color: green;">✓ Yüklendi</span>';
+                } else {
+                    html += '<span style="color: red;">✗ Yüklenemedi</span>';
+                }
+                html += `</p>`;
+            });
+
+            result.innerHTML = html;
+        }
+
+        // Sayfa yüklendiğinde otomatik kontrol
+        window.addEventListener('load', () => {
+            setTimeout(checkImages, 500);
+        });
+    </script>
+</body>
+
+</html>

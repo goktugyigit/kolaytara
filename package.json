@@ -9,6 +9,7 @@
     "preview": "wrangler pages dev public --port 3000"
   },
   "dependencies": {
+    "flag-icons": "^7.5.0",
     "wrangler": "^3.0.0"
   },
   "devDependencies": {
