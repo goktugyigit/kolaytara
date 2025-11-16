@@ -76,9 +76,12 @@
         <p class="loading-text">Loading...</p>
     </div>
     <script>
-        // 1.5 saniye sonra yönlendir
+        const browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        const isTurkish = browserLang.startsWith('tr');
+        const targetUrl = isTurkish ? '/tr/index.html' : '/en/index.html';
+
         setTimeout(() => {
-            window.location.href = '/tr/index.html';
+            window.location.href = targetUrl;
         }, 1500);
     </script>
 </body>
