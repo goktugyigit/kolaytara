@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KolayTara Dashboard</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">  <link rel="stylesheet" href="../assets/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../assets/styles.css">
 </head>
 
 <body>
@@ -42,13 +43,7 @@
   </nav>
 
   <section class="upload-section">
-    <h2>Upload Z Report</h2>
-
-    <div class="upload-area">
-      <input type="file" id="uploadInput" accept="image/*" style="display:none;">
-      <button id="selectFileBtn" class="btn secondary">Select File</button>
-      <p id="fileName" class="file-name"></p>
-    </div>
+    <h2>AI Chatbot Test</h2>
 
     <div class="api-key-section">
       <h3>Your AI Studio API Key</h3>
@@ -58,12 +53,36 @@
       </p>
     </div>
 
-    <button id="processBtn" class="btn primary">Upload and Process</button>
+    <div class="chat-container"
+      style="max-width: 800px; margin: 30px auto; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
+      <div id="chatMessages" style="height: 400px; overflow-y: auto; padding: 20px; background: #f9f9f9;">
+        <div style="text-align: center; color: #999; padding: 20px;">
+          Type your message and click send
+        </div>
+      </div>
+      <div style="display: flex; padding: 15px; background: white; border-top: 1px solid #ddd;">
+        <input type="text" id="chatInput" placeholder="Type your message..."
+          style="flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 4px; margin-right: 10px;">
+        <button id="sendBtn" class="btn primary" style="padding: 10px 20px;">Send</button>
+      </div>
+    </div>
 
     <div id="loading" class="loading" style="display:none;">
       <div class="spinner"></div>
-      <p>Processing with AI...</p>
+      <p>AI is thinking...</p>
     </div>
+
+    <hr style="margin: 50px 0;">
+
+    <h2>Upload Z Report</h2>
+
+    <div class="upload-area">
+      <input type="file" id="uploadInput" accept="image/*" style="display:none;">
+      <button id="selectFileBtn" class="btn secondary">Select File</button>
+      <p id="fileName" class="file-name"></p>
+    </div>
+
+    <button id="processBtn" class="btn primary">Upload and Process</button>
 
     <div id="results" class="results"></div>
     <button id="downloadExcel" class="btn success" style="display:none;"><i class="fas fa-file-excel"></i> Download as
@@ -102,6 +121,7 @@
   </footer>
 
   <script src="../scripts/app.js"></script>
+  <script src="../scripts/chatbot.js"></script>
   <script src="../scripts/upload.js"></script>
   <script src="../scripts/ai.js"></script>
   <script src="../scripts/excel.js"></script>
