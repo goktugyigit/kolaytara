@@ -18,6 +18,8 @@ function addMessage(sender, text, type) {
     padding: 12px 16px;
     border-radius: 8px;
     max-width: 70%;
+    word-wrap: break-word;
+    white-space: pre-wrap;
     ${type === 'user' ? 'margin-left: auto; background: #d2242a; color: white; text-align: right;' : 'background: white; color: #333;'}
   `;
 
@@ -26,7 +28,7 @@ function addMessage(sender, text, type) {
     senderSpan.textContent = sender;
 
     const textDiv = document.createElement('div');
-    textDiv.style.cssText = 'line-height: 1.5;';
+    textDiv.style.cssText = 'line-height: 1.5; word-wrap: break-word; white-space: pre-wrap;';
     textDiv.textContent = text;
 
     messageDiv.appendChild(senderSpan);
@@ -70,13 +72,7 @@ async function sendMessage() {
                 contents: [{
                     role: 'user',
                     parts: [{ text: message }]
-                }],
-                generationConfig: {
-                    temperature: 0.7,
-                    topK: 40,
-                    topP: 0.95,
-                    maxOutputTokens: 1024,
-                }
+                }]
             })
         });
 
