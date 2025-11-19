@@ -110,6 +110,11 @@ async function sendMessage() {
         // Add AI response
         addMessage('AI', aiResponse, 'bot');
 
+        // MAX_TOKENS uyarısı
+        if (candidate.finishReason === 'MAX_TOKENS') {
+            addMessage('Sistem', '⚠️ Yanıt çok uzun olduğu için kesildi. Daha spesifik bir soru sorabilirsiniz.', 'bot');
+        }
+
     } catch (error) {
         console.error('Chat error:', error);
         addMessage('Sistem', `Hata: ${error.message}`, 'bot');
