@@ -61,7 +61,7 @@ async function sendMessage() {
     sendBtn.disabled = true;
 
     try {
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=${apiKey}`, {
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -86,7 +86,30 @@ async function sendMessage() {
         }
 
         const data = await response.json();
-        const aiResponse = data.candidates?.[0]?.content?.parts?.[0]?.text || 'Yanıt alınamadı';
+        console.log('API Response:', data); // Debug için
+
+        // Yanıt kontrolü
+        if (!data.candidates || data.candidates.length === 0) {
+            throw new Error('API yanıt vermedi. Muhtemelen içerik filtrelendi.');
+        }
+
+        const candidate = data.candidates[0];
+
+        // İçerik filtreleme kontrolü
+        if (candidate.finishReason === 'SAFETY') {
+            throw new Error('Mesajınız güvenlik filtresine takıldı. Lütfen farklı bir şekilde sorun.');
+        }
+
+        if (candidate.finishReason === 'RECITATION') {
+            throw new Error('Yanıt telif hakkı nedeniyle engellenmiş olabilir.');
+        }
+
+        const aiResponse = candidate?.content?.parts?.[0]?.text;
+
+        if (!aiResponse) {
+            console.error('Yanıt yapısı:', candidate);
+            throw new Error(`Yanıt alınamadı. Finish reason: ${candidate.finishReason || 'bilinmiyor'}`);
+        }
 
         // Add AI response
         addMessage('AI', aiResponse, 'bot');
