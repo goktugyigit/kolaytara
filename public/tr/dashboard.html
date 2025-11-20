@@ -7,100 +7,176 @@
   <title>KolayTara Paneli</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="../assets/styles.css">
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 250px;
+      background: linear-gradient(180deg, #1a1a1a 0%, #2d2d2d 100%);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      height: 100vh;
+      left: 0;
+      top: 0;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar-header {
+      padding: 25px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+    }
+
+    .sidebar-logo {
+      max-width: 150px;
+      height: auto;
+    }
+
+    .sidebar-menu {
+      flex: 1;
+      padding: 20px 0;
+      overflow-y: auto;
+    }
+
+    .sidebar-item {
+      display: flex;
+      align-items: center;
+      padding: 15px 25px;
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    .sidebar-item:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+
+    .sidebar-item.active {
+      background: #d2242a;
+      color: white;
+    }
+
+    .sidebar-item i {
+      width: 24px;
+      margin-right: 15px;
+      font-size: 18px;
+    }
+
+    .sidebar-footer {
+      padding: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .main-content {
+      margin-left: 250px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .upload-section {
+      flex: 1;
+      padding: 40px;
+    }
+
+    .footer {
+      margin-left: 0;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 70px;
+      }
+
+      .sidebar-item span {
+        display: none;
+      }
+
+      .sidebar-logo {
+        max-width: 40px;
+      }
+
+      .main-content {
+        margin-left: 70px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <nav class="navbar">
-    <a href="index.html" class="logo-link">
-      <img src="../assets/logo.png?v=2" class="logo" alt="KolayTara Logo">
-    </a>
-    <div class="nav-menu">
-      <a href="index.html" class="nav-menu-link">Ana Sayfa</a>
-      <a href="hakkimizda.html" class="nav-menu-link">Hakkımızda</a>
-      <a href="fiyatlandirma.html" class="nav-menu-link">Fiyatlandırma</a>
-      <a href="iletisim.html" class="nav-menu-link">Bize Ulaşın</a>
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <img src="../assets/logo.png?v=2" class="sidebar-logo" alt="KolayTara Logo">
     </div>
-    <div class="nav-links">
-      <div class="language-selector">
-        <button class="lang-dropdown-btn" onclick="this.parentElement.classList.toggle('active')">
-          <span class="flag-icon"><img src="../assets/flags/tr.svg?v=2" alt="TR"></span>
-          <span class="lang-text">TR</span>
-        </button>
-        <div class="lang-dropdown-menu">
-          <a href="/tr/dashboard.html" class="lang-option active">
-            <span class="flag-icon"><img src="../assets/flags/tr.svg?v=2" alt="TR"></span>
-            <span class="lang-text">Türkçe</span>
-          </a>
-          <a href="/en/dashboard.html" class="lang-option">
-            <span class="flag-icon"><img src="../assets/flags/us.svg?v=2" alt="US"></span>
-            <span class="lang-text">English</span>
-          </a>
-        </div>
+
+    <div class="sidebar-menu">
+      <a href="dashboard.html" class="sidebar-item active">
+        <i class="fas fa-home"></i>
+        <span>Ana Panel</span>
+      </a>
+      <a href="index.html" class="sidebar-item">
+        <i class="fas fa-globe"></i>
+        <span>Siteye Dön</span>
+      </a>
+      <a href="profile.html" class="sidebar-item">
+        <i class="fas fa-user"></i>
+        <span>Profil</span>
+      </a>
+    </div>
+
+    <div class="sidebar-footer">
+      <a href="#" id="logout" class="sidebar-item">
+        <i class="fas fa-sign-out-alt"></i>
+        <span>Çıkış Yap</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="main-content">
+
+    <section class="upload-section">
+      <h2>Z Raporu Yükle</h2>
+
+      <div class="upload-area">
+        <input type="file" id="uploadInput" accept="image/*" style="display:none;">
+        <button id="selectFileBtn" class="btn secondary">Dosya Seç</button>
+        <p id="fileName" class="file-name"></p>
       </div>
-      <a href="#" id="logout" class="btn">Çıkış</a>
-      <a href="profile.html" class="btn btn-active"><i class="fa-solid fa-user"></i> Profil</a>
-    </div>
-  </nav>
 
-  <section class="upload-section">
-    <h2>Z Raporu Yükle</h2>
-
-    <div class="upload-area">
-      <input type="file" id="uploadInput" accept="image/*" style="display:none;">
-      <button id="selectFileBtn" class="btn secondary">Dosya Seç</button>
-      <p id="fileName" class="file-name"></p>
-    </div>
-
-    <div class="api-key-section">
-      <h3>AI Studio API Anahtarınız</h3>
-      <input type="password" id="apiKey" placeholder="Gemini API Key girin">
-      <p class="note">⚠️ Anahtar tarayıcıda saklanmaz, sadece geçici olarak kullanılır.</p>
-      <p class="note">API anahtarı almak için: <a href="https://aistudio.google.com/app/apikey" target="_blank">AI
-          Studio</a></p>
-    </div>
-
-    <button id="processBtn" class="btn primary">Yükle ve İşle</button>
-
-    <div id="loading" class="loading" style="display:none;">
-      <div class="spinner"></div>
-      <p>AI ile işleniyor...</p>
-    </div>
-
-    <div id="results" class="results"></div>
-    <button id="downloadExcel" class="btn success" style="display:none;"><i class="fas fa-file-excel"></i> Excel Olarak
-      İndir</button>
-  </section>
-
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-left">
-        <p class="company-name">BEE PIXEL LLC</p>
-        <p class="company-tagline">Yapay zeka destekli iş çözümleri ile geleceği şekillendiriyoruz</p>
-        <p class="company-description">KolayTara, muhasebe süreçlerinizi dijitalleştiren, zamandan tasarruf ettiren ve
-          hata oranını minimize eden yapay zeka destekli platformumuzdur.</p>
-        <div class="footer-contact">
-          <p class="contact-label">İletişim</p>
-          <p><i class="fas fa-envelope"></i> <a href="mailto:kolaytara@hotmail.com"
-              class="social-link">kolaytara@hotmail.com</a></p>
-        </div>
+      <div class="api-key-section">
+        <h3>AI Studio API Anahtarınız</h3>
+        <input type="password" id="apiKey" placeholder="Gemini API Key girin">
+        <p class="note">⚠️ Anahtar tarayıcıda saklanmaz, sadece geçici olarak kullanılır.</p>
+        <p class="note">API anahtarı almak için: <a href="https://aistudio.google.com/app/apikey" target="_blank">AI
+            Studio</a></p>
       </div>
-      <div class="footer-right">
-        <h3>Hızlı Bağlantılar</h3>
-        <div class="footer-links">
-          <a href="index.html">Ana Sayfa</a>
-          <a href="hakkimizda.html">Hakkımızda</a>
-          <a href="fiyatlandirma.html">Fiyatlandırma</a>
-          <a href="iletisim.html">İletişim</a>
-          <a href="terms.html">Kullanım Şartları</a>
-          <a href="privacy.html">Gizlilik Politikası</a>
-          <a href="refund-policy.html">İade ve İptal Politikası</a>
-        </div>
+
+      <button id="processBtn" class="btn primary">Yükle ve İşle</button>
+
+      <div id="loading" class="loading" style="display:none;">
+        <div class="spinner"></div>
+        <p>AI ile işleniyor...</p>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 BEE PIXEL LLC. Tüm hakları saklıdır.</p>
-    </div>
-  </footer>
+
+      <div id="results" class="results"></div>
+      <button id="downloadExcel" class="btn success" style="display:none;"><i class="fas fa-file-excel"></i> Excel
+        Olarak
+        İndir</button>
+    </section>
+
+    <footer class="footer" style="padding: 20px 40px; text-align: center; background: #f9f9f9; margin-top: auto;">
+      <p style="margin: 0; color: #666;">&copy; 2025 BEE PIXEL LLC. Tüm hakları saklıdır.</p>
+    </footer>
+  </div>
 
   <script src="../scripts/app.js"></script>
   <script src="../scripts/upload.js"></script>
