@@ -5,137 +5,208 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil - KolayTara</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../assets/styles.css">
     <style>
-        html {
-            overflow-y: scroll;
+        body {
+            margin: 0;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 250px;
+            background: linear-gradient(180deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            height: 100vh;
+            left: 0;
+            top: 0;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar-header {
+            padding: 25px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .sidebar-logo {
+            max-width: 150px;
+            height: auto;
+        }
+
+        .sidebar-menu {
+            flex: 1;
+            padding: 20px 0;
+            overflow-y: auto;
+        }
+
+        .sidebar-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 25px;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .sidebar-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .sidebar-item.active {
+            background: #d2242a;
+            color: white;
+        }
+
+        .sidebar-item i {
+            width: 24px;
+            margin-right: 15px;
+            font-size: 18px;
+        }
+
+        .sidebar-footer {
+            padding: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .main-content {
+            margin-left: 250px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .page-content {
+            flex: 1;
+        }
+
+        .footer {
+            margin-left: 0;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 70px;
+            }
+
+            .sidebar-item span {
+                display: none;
+            }
+
+            .sidebar-logo {
+                max-width: 40px;
+            }
+
+            .main-content {
+                margin-left: 70px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <nav class="navbar">
-        <a href="index.html" class="logo-link">
-            <img src="../assets/logo.png?v=2" class="logo" alt="KolayTara Logo">
-        </a>
-        <div class="nav-menu">
-            <a href="dashboard.html" class="nav-menu-link">Dashboard</a>
-            <a href="hakkimizda.html" class="nav-menu-link">Hakkımızda</a>
-            <a href="fiyatlandirma.html" class="nav-menu-link">Fiyatlandırma</a>
-            <a href="iletisim.html" class="nav-menu-link">Bize Ulaşın</a>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <img src="../assets/logo.png?v=2" class="sidebar-logo" alt="KolayTara Logo">
         </div>
-        <div class="nav-links">
-            <div class="language-selector">
-                <button class="lang-dropdown-btn" onclick="this.parentElement.classList.toggle('active')">
-                    <span class="flag-icon"><img src="../assets/flags/tr.svg?v=2" alt="TR"></span>
-                    <span class="lang-text">TR</span>
-                </button>
-                <div class="lang-dropdown-menu">
-                    <a href="/tr/profile.html" class="lang-option active">
-                        <span class="flag-icon"><img src="../assets/flags/tr.svg?v=2" alt="TR"></span>
-                        <span class="lang-text">Türkçe</span>
-                    </a>
-                    <a href="/en/profile.html" class="lang-option">
-                        <span class="flag-icon"><img src="../assets/flags/us.svg?v=2" alt="US"></span>
-                        <span class="lang-text">English</span>
-                    </a>
+
+        <div class="sidebar-menu">
+            <a href="dashboard.html" class="sidebar-item">
+                <i class="fas fa-home"></i>
+                <span>Ana Panel</span>
+            </a>
+            <a href="index.html" class="sidebar-item">
+                <i class="fas fa-globe"></i>
+                <span>Siteye Dön</span>
+            </a>
+            <a href="profile.html" class="sidebar-item active">
+                <i class="fas fa-user"></i>
+                <span>Profil</span>
+            </a>
+        </div>
+
+        <div class="sidebar-footer">
+            <a href="#" id="logout" class="sidebar-item">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Çıkış Yap</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="main-content">
+
+        <section class="page-content">
+            <div class="container">
+                <h1><i class="fa-solid fa-user-circle"></i> Profil Ayarları</h1>
+                <p class="subtitle">Hesap bilgilerinizi yönetin</p>
+
+                <div class="profile-grid">
+                    <div class="profile-card">
+                        <h2><i class="fa-solid fa-info-circle"></i> Hesap Bilgileri</h2>
+                        <div class="info-item">
+                            <label>E-posta:</label>
+                            <p id="userEmail">Loading...</p>
+                        </div>
+                        <div class="info-item">
+                            <label>Üyelik Tarihi:</label>
+                            <p id="memberSince">Loading...</p>
+                        </div>
+                        <div class="info-item">
+                            <label>Plan:</label>
+                            <p id="userPlan">Ücretsiz</p>
+                        </div>
+                    </div>
+
+                    <div class="profile-card">
+                        <h2><i class="fa-solid fa-key"></i> Şifre Değiştir</h2>
+                        <form id="changePasswordForm">
+                            <div class="form-group">
+                                <label for="currentPassword">Mevcut Şifre</label>
+                                <input type="password" id="currentPassword" placeholder="Mevcut şifrenizi girin"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="newPassword">Yeni Şifre</label>
+                                <input type="password" id="newPassword" placeholder="Yeni şifre (min. 6 karakter)"
+                                    required minlength="6">
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmNewPassword">Yeni Şifre Tekrar</label>
+                                <input type="password" id="confirmNewPassword" placeholder="Yeni şifreyi tekrar girin"
+                                    required>
+                            </div>
+                            <button type="submit" class="btn primary">
+                                <i class="fa-solid fa-check"></i> Şifreyi Güncelle
+                            </button>
+                        </form>
+                        <div id="passwordMessage" class="message" style="display:none;"></div>
+                    </div>
+                </div>
+
+                <div class="profile-card danger-zone">
+                    <h2><i class="fa-solid fa-exclamation-triangle"></i> Tehlikeli Bölge</h2>
+                    <p>Hesabınızı kalıcı olarak silmek isterseniz aşağıdaki butona tıklayın.</p>
+                    <button id="deleteAccountBtn" class="btn btn-danger">
+                        <i class="fa-solid fa-trash"></i> Hesabı Sil
+                    </button>
                 </div>
             </div>
-            <a href="#" id="logout" class="btn">Çıkış</a>
-            <a href="profile.html" class="btn btn-active"><i class="fa-solid fa-user"></i> Profil</a>
-        </div>
-    </nav>
+        </section>
 
-    <section class="page-content">
-        <div class="container">
-            <h1><i class="fa-solid fa-user-circle"></i> Profil Ayarları</h1>
-            <p class="subtitle">Hesap bilgilerinizi yönetin</p>
-
-            <div class="profile-grid">
-                <div class="profile-card">
-                    <h2><i class="fa-solid fa-info-circle"></i> Hesap Bilgileri</h2>
-                    <div class="info-item">
-                        <label>E-posta:</label>
-                        <p id="userEmail">Loading...</p>
-                    </div>
-                    <div class="info-item">
-                        <label>Üyelik Tarihi:</label>
-                        <p id="memberSince">Loading...</p>
-                    </div>
-                    <div class="info-item">
-                        <label>Plan:</label>
-                        <p id="userPlan">Ücretsiz</p>
-                    </div>
-                </div>
-
-                <div class="profile-card">
-                    <h2><i class="fa-solid fa-key"></i> Şifre Değiştir</h2>
-                    <form id="changePasswordForm">
-                        <div class="form-group">
-                            <label for="currentPassword">Mevcut Şifre</label>
-                            <input type="password" id="currentPassword" placeholder="Mevcut şifrenizi girin" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="newPassword">Yeni Şifre</label>
-                            <input type="password" id="newPassword" placeholder="Yeni şifre (min. 6 karakter)" required
-                                minlength="6">
-                        </div>
-                        <div class="form-group">
-                            <label for="confirmNewPassword">Yeni Şifre Tekrar</label>
-                            <input type="password" id="confirmNewPassword" placeholder="Yeni şifreyi tekrar girin"
-                                required>
-                        </div>
-                        <button type="submit" class="btn primary">
-                            <i class="fa-solid fa-check"></i> Şifreyi Güncelle
-                        </button>
-                    </form>
-                    <div id="passwordMessage" class="message" style="display:none;"></div>
-                </div>
-            </div>
-
-            <div class="profile-card danger-zone">
-                <h2><i class="fa-solid fa-exclamation-triangle"></i> Tehlikeli Bölge</h2>
-                <p>Hesabınızı kalıcı olarak silmek isterseniz aşağıdaki butona tıklayın.</p>
-                <button id="deleteAccountBtn" class="btn btn-danger">
-                    <i class="fa-solid fa-trash"></i> Hesabı Sil
-                </button>
-            </div>
-        </div>
-    </section>
+        <footer class="footer" style="padding: 20px 40px; text-align: center; background: #f9f9f9; margin-top: auto;">
+            <p style="margin: 0; color: #666;">&copy; 2025 BEE PIXEL LLC. Tüm hakları saklıdır.</p>
+        </footer>
+    </div>
 
     <script src="../scripts/app.js"></script>
     <script src="../scripts/profile.js"></script>
-
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-left">
-                <p class="company-name">BEE PIXEL LLC</p>
-                <p class="company-tagline">Yapay zeka destekli iş çözümleri ile geleceği şekillendiriyoruz</p>
-                <p class="company-description">KolayTara, muhasebe süreçlerinizi dijitalleştiren, zamandan tasarruf
-                    ettiren ve hata oranını minimize eden yapay zeka destekli platformumuzdur.</p>
-                <div class="footer-contact">
-                    <p class="contact-label">İletişim</p>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:kolaytara@hotmail.com"
-                            class="social-link">kolaytara@hotmail.com</a></p>
-                </div>
-            </div>
-            <div class="footer-right">
-                <h3>Hızlı Bağlantılar</h3>
-                <div class="footer-links">
-                    <a href="index.html">Ana Sayfa</a>
-                    <a href="hakkimizda.html">Hakkımızda</a>
-                    <a href="fiyatlandirma.html">Fiyatlandırma</a>
-                    <a href="iletisim.html">İletişim</a>
-                    <a href="terms.html">Kullanım Şartları</a>
-                    <a href="privacy.html">Gizlilik Politikası</a>
-                    <a href="refund-policy.html">İade ve İptal Politikası</a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 BEE PIXEL LLC. Tüm hakları saklıdır.</p>
-        </div>
-    </footer>
 </body>
 
 </html>
